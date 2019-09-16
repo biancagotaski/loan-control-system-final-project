@@ -11,19 +11,13 @@
 <title>Cadastro de Usuários</title>
 </head>
 <body>
-	<%
-	String message = (String)request.getAttribute("msg");
-	%>
-	
 	<div class="container">
-	  <h2>Cadastro de Usuários</h2>
-	  
-	  <h3><%=message != null ? message : ""%></h3>
-	  
+	  <h2>Cadastro de usuário</h2>
+	  	  
 	  <form action="UserController" method="post">
 	    <div class="form-group">
-	      <label for="nome">Nome:</label>
-	      <input type="text" class="form-control" id="nome" placeholder="Entre com o seu nome" name="name">
+	      <label for="name">Nome:</label>
+	      <input type="text" class="form-control" id="name" placeholder="Entre com o seu nome" name="name">
 	    </div>
 	
 	    <div class="form-group">
@@ -35,6 +29,10 @@
 	      <label for="pwd">Senha:</label>
 	      <input type="password" class="form-control" id="pwd" placeholder="Entre com a sua senha" name="password">
 	    </div>
+	    
+	    <div class="checkbox">
+	   		<label><input type="checkbox" name="type" value="A"> Administrador</label>
+	 	</div>
 	    
 	    <button type="submit" class="btn btn-default">Salvar</button>
 	  </form>

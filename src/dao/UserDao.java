@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.gotaski.business.Administrator;
 import com.gotaski.business.User;
 
 import connection.Conexao;
@@ -13,8 +14,7 @@ import connection.Conexao;
 public class UserDao {
 	
 	public static List<User> getList(){
-		List<User> userList = new ArrayList<User>();
-
+		List<User> list = new ArrayList<User>();
 		String sql = "SELECT * FROM tuser ORDER BY name";
 		
 		try {
@@ -22,19 +22,30 @@ public class UserDao {
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()){
-				userList.add(
-						new User(
-								rs.getInt("idtuser"),
-								rs.getString("name"),
-								rs.getString("email"),
-								rs.getString("password")
-							)
-					);
+				if(rs.getBoolean("admin")) {
+					list.add(
+							new Administrator(
+										rs.getInt("idtuser"),
+										rs.getString("name"),
+										rs.getString("email"),
+										rs.getString("password")
+									)
+							);
+				} else {
+					list.add(
+							new User(
+									rs.getInt("idtuser"),
+									rs.getString("name"),
+									rs.getString("email"),
+									rs.getString("password")
+								)
+							);
+				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return userList;
+		return list;
 	}
 	
 	public static User validation(String email, String password){
@@ -49,12 +60,21 @@ public class UserDao {
 			ResultSet rs = ps.executeQuery();
 			
 			if(rs.next()){
-				return new User(
-						rs.getInt("idtuser"), 
-						rs.getString("name"), 
-						rs.getString("email"), 
-						rs.getString("password")
-					);
+				if(rs.getBoolean("admin")) {
+					return new Administrator(
+								rs.getInt("idtuser"),
+								rs.getString("name"),
+								rs.getString("email"),
+								rs.getString("password")
+							);
+				} else {
+					return new User(
+							rs.getInt("idtuser"), 
+							rs.getString("name"), 
+							rs.getString("email"), 
+							rs.getString("password")
+						);
+				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -62,32 +82,33 @@ public class UserDao {
 		return null;
 	}
 
-	public static boolean addUser(User user){
+	public static User addUser(User user){
 		try {
 			PreparedStatement ps = 
 					Conexao.obterConexao().prepareStatement(
-							"INSERT into tuser (name, email, password) values (?,?,?)"
+							"INSERT into tuser (name, email, password, admin) values (?,?,?,?)"
 						);
 
 			ps.setString(1, user.getName());
 			ps.setString(2, user.getEmail());
 			ps.setString(3, user.getPassword());
+			ps.setBoolean(4, false);
 			
 			ps.execute();
 			
-			return true;
+			return user;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 			
-		return false;
+		return null;
 	}
 
 	public static boolean update(User user){
 		try {
 			PreparedStatement ps = 
 					Conexao.obterConexao().prepareStatement(
-							"UPDATE tuser SET name = ?, email = ?, password = ? WHERE id = ?"
+							"UPDATE tuser SET name = ?, email = ?, password = ? WHERE idtuser = ?"
 						);
 
 			ps.setString(1, user.getName());

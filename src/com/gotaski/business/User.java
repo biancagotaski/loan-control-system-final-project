@@ -16,13 +16,17 @@ public class User {
 		this.id = id;
 	}
 
+	public String getType() {
+		return (this instanceof Administrator) ? "Administrator" : "User";
+	}
+	
 	@Override
 	public String toString() {
 		return String.format("%d - %s - %s - %s", 
 				this.getId(),
 				this.getName(),
 				this.getEmail(), 
-				this.getPassword()
+				this.getType()
 			);
 	}
 	

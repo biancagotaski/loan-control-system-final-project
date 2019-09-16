@@ -15,31 +15,38 @@
 <body>
 <%
 	List<User> userList = (List<User>)request.getAttribute("users");
+	String login = (String)request.getAttribute("userLogged");
 	%>
 	
 <div class="container">
-  <h2>Cadastro de Usuários</h2>
-  
-  <form action="userRegister.jsp">  
+  <h2>Olá, <%=login%></h2>
+  <form action="AccessController" method="get">  
 	<button type="submit" class="btn btn-default">Novo</button>
   </form>
+  <hr>
               
-  <p>Usuários:</p>
   <%if(userList != null){%>
 	  <table class="table table-striped">
 	    <thead>
 	      <tr>
+	      	<th>Id</th>
 	        <th>Nome</th>
 	        <th>Email</th>
-	        <th>Senha</th>
+	        <th>Tipo</th>
+	        <th></th>
 	      </tr>
 	    </thead>
 	    <tbody>
 	    	<%for(User item : userList){%>
 	      <tr>
+	      	<td><%=item.getId() %></td>
 	        <td><%=item.getName()%></td>
 	        <td><%=item.getEmail()%></td>
-	        <td><%=item.getPassword()%></td>
+	        <td><%=item.getType()%></td>
+	        <form action="UserController" method="get">
+		        <input type="hidden" name="idUser" value="<%=item.getId()%>">
+		        <td><button type="submit" class="btn btn-default">Excluir</button></td>
+	        </form>
 	      </tr>
 	      	<%}%>
 	    </tbody>
