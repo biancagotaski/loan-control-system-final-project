@@ -40,6 +40,7 @@ public class UserController extends HttpServlet {
 			this.doGet(request, response);
 			
 		} else {
+			System.out.println("Entrou no else do UserController");
 			request.setAttribute("msg", "Problemas na inclusão!!!");
 
 			request.getRequestDispatcher("userRegister.jsp").forward(request, response);

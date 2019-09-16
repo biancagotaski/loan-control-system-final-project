@@ -20,7 +20,7 @@
 <div class="container">
   <h2>Cadastro de Usuários</h2>
   
-  <form action="usuarioCadastro.jsp">  
+  <form action="userRegister.jsp">  
 	<button type="submit" class="btn btn-default">Novo</button>
   </form>
               

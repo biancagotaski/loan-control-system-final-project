@@ -15,7 +15,7 @@ public class UserDao {
 	public static List<User> getList(){
 		List<User> userList = new ArrayList<User>();
 
-		String sql = "SELECT * FROM TUser ORDER BY name";
+		String sql = "SELECT * FROM tuser ORDER BY name";
 		
 		try {
 			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
@@ -24,9 +24,9 @@ public class UserDao {
 			while(rs.next()){
 				userList.add(
 						new User(
-								rs.getInt("id"),
+								rs.getInt("idtuser"),
 								rs.getString("name"),
-								rs.getString("email"), 
+								rs.getString("email"),
 								rs.getString("password")
 							)
 					);
@@ -38,7 +38,7 @@ public class UserDao {
 	}
 	
 	public static User validation(String email, String password){
-		String sql = "SELECT * FROM TUser WHERE email = ? AND password = ?";
+		String sql = "SELECT * FROM tuser WHERE EMAIL = ? AND PASSWORD = ?";
 		
 		try {
 			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
@@ -50,7 +50,7 @@ public class UserDao {
 			
 			if(rs.next()){
 				return new User(
-						rs.getInt("id"), 
+						rs.getInt("idtuser"), 
 						rs.getString("name"), 
 						rs.getString("email"), 
 						rs.getString("password")
@@ -66,7 +66,7 @@ public class UserDao {
 		try {
 			PreparedStatement ps = 
 					Conexao.obterConexao().prepareStatement(
-							"INSERT into TUser (name, email, password) values (?,?,?)"
+							"INSERT into tuser (name, email, password) values (?,?,?)"
 						);
 
 			ps.setString(1, user.getName());
@@ -87,7 +87,7 @@ public class UserDao {
 		try {
 			PreparedStatement ps = 
 					Conexao.obterConexao().prepareStatement(
-							"UPDATE TUser SET name = ?, email = ?, password = ? WHERE id = ?"
+							"UPDATE tuser SET name = ?, email = ?, password = ? WHERE id = ?"
 						);
 
 			ps.setString(1, user.getName());
@@ -109,7 +109,7 @@ public class UserDao {
 		try {
 			PreparedStatement ps = 
 					Conexao.obterConexao().prepareStatement(
-							"DELETE FROM TUser WHERE id = ?"
+							"DELETE FROM tuser WHERE idtuser = ?"
 						);
 
 			ps.setInt(1, id);
