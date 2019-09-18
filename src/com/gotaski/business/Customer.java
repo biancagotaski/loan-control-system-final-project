@@ -3,6 +3,7 @@ package com.gotaski.business;
 import java.time.LocalDateTime;
 
 public class Customer {
+	private int id;
 	private String name;
 	private String lastName;
 	private String email;
@@ -15,6 +16,12 @@ public class Customer {
 	private Loan loan;
 	
 	
+	public int getId() {
+		return this.id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}	
 	public String getName() {
 		return name;
 	}

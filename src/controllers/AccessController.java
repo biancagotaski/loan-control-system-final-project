@@ -23,7 +23,9 @@ public class AccessController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("userRegister.jsp").forward(request, response);
+		request.setAttribute("invalid", false);
+		
+		request.getRequestDispatcher("login.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,15 +38,13 @@ public class AccessController extends HttpServlet {
 		User user = UserDao.validation(email, password);
 		
 		if(user != null) {
-			String type = (user instanceof Administrator) ? "Administrator" : "User";
-			out.println("Usuário identificado: " + user.getName());
-			out.println("Tipo: " + type);
+			request.getSession().setAttribute("user", user);
 			
-			request.setAttribute("userLogged", email);
-			request.setAttribute("users", UserDao.getList());
-			request.getRequestDispatcher("userList.jsp").forward(request, response);
+			request.getRequestDispatcher("main.jsp").forward(request, response);
 		} else {
-			request.getRequestDispatcher("userRegister.jsp").forward(request, response);
+			
+			request.setAttribute("invalid", true);
+			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
 	}
 

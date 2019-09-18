@@ -11,8 +11,24 @@
 <title>Loan Control System</title>
 </head>
 <body>
+
+	<%
+	boolean invalid = false;
+	if(request.getAttribute("invalid") != null){
+		invalid = (Boolean)request.getAttribute("invalid");
+	}
+	%>
+
 	<div class="container">
 	  <h2>Login</h2>
+	  
+	  <%if(invalid){%>
+		<div class="container">
+		  <div class="alert alert-danger">
+		    <strong>Problema!</strong> Usuário não encontrado!!!
+		  </div>
+		</div>
+	  	<%}%>
 	  
 	  <form action="AccessController" method="post">
 	    <div class="form-group">
