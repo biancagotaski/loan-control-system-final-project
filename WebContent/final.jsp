@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>AppMyEmprestimo</title>
+  <title>Sistema de Controle de Empréstimo</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -20,7 +20,7 @@
 <div class="panel-group">
 <div class="panel panel-default">
 <div class="panel-heading">
-	<c:import url="cabecalho.jsp"/>
+	<c:import url="nav.jsp"/>
 
   <h4>Finaliza</h4>
 	<form action="<%=controller%>">

@@ -15,7 +15,7 @@
 <div class="container">
 <div class="panel-group">
 <div class="panel panel-default">
-	<c:import url="main.jsp"/>
+	<c:import url="nav.jsp"/>
 
    <div class="panel-body">
 	<form action="ProjectorController" method="post">

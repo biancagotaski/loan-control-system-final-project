@@ -53,7 +53,7 @@ public abstract class Product {
 	
 	@Override
 	public String toString() {
-		return String.format("%d - %s - %2.f - %d - %s",
+		return String.format("%d - %s - %.2f - %d - %s",
 					this.id,
 					this.name,
 					this.value,
