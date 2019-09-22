@@ -20,6 +20,26 @@
    <div class="panel-body">
 	<form action="ProjectorController" method="post">
 
+	<div class="form-group">
+      <label for="name">Nome do Produto:</label>
+      <input type="text" class="form-control" id="name" name="name">
+    </div>
+    
+    <div class="form-group">
+      <label for="value">Valor do Produto:</label>
+      <input type="text" class="form-control" id="value" name="value">
+    </div>
+    
+    <div class="form-group">
+      <label for="serialNumber">Número de Série do Produto:</label>
+      <input type="text" class="form-control" id="serialNumber" name="serialNumber">
+    </div>
+    
+    <div class="form-group">
+      <label for="brand">Marca do Produto:</label>
+      <input type="text" class="form-control" id="brand" name="brand">
+    </div>
+
     <div class="form-group">
       <label for="resolution">Resolução em Pixels:</label>
       <input type="text" class="form-control" id="resolution" name="resolution">
@@ -35,9 +55,6 @@
       <input type="checkbox" class="form-control" id="hasLaser" name="hasLaser">
     </div>
     
-        
-    <!-- COLOCAR RELACIONAMENTO DE HERANÇA (PROJETOR HERDA DE PRODUTO) -->
-
     <button type="submit" class="btn btn-default">Cadastrar</button>
   </form>
 </div>

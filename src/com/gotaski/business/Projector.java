@@ -1,36 +1,47 @@
 package com.gotaski.business;
 
+import java.util.Set;
+
 public class Projector extends Product{
-	private int id;
 	private String resolution;
 	private boolean hasLCD;
 	private boolean hasLaser;
 	
-	public Projector(String resolution, boolean hasLCD, boolean hasLaser) {
-		this.resolution = resolution;
-		this.hasLCD = hasLCD;
-		this.hasLaser = hasLaser;
+	public Projector(int id) {
+		super(id);
+	}	
+	
+	public Projector(String name, float value, int serialNumber, String brand, String resolution, boolean hasLCD, boolean hasLaser) {
+		this(name, value, serialNumber, brand);
+		this.setResolution(resolution);
+		this.setHasLCD(hasLCD);
+		this.setHasLaser(hasLaser);
 	}
 	
-	public Projector(int id, String resolution, boolean hasLCD, boolean hasLaser) {
-		this.id = id;
-		this.resolution = resolution;
-		this.hasLCD = hasLCD;
-		this.hasLaser = hasLaser;
+	public Projector(String name, float value, int serialNumber, String brand) {
+		super(name, value, serialNumber, brand);
 	}
 	
+	public Projector(int id, String name, float value, int serialNumber, String brand, String resolution, boolean hasLCD, boolean hasLaser) {
+		this(name, value, serialNumber,  brand, resolution, hasLCD, hasLaser);
+		this.setId(id);
+	}
+
 	@Override
 	public String toString() {
-		//STILL DONT KNOW THE WAY THAT THIS SHOULD BE
-		return super.toString();
+		return String.format("%s - %s - %s - %s",
+				super.toString(),
+				this.resolution,
+				this.hasLCD,
+				this.hasLaser
+			);
 	}
 	
-	public int getId() {
-		return this.id;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
+	public void display() {
+		super.display();
+		
+		System.out.println("Projector");
+		System.out.println(this.toString());
 	}
 	
 	public String getResolution() {

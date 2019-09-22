@@ -16,6 +16,26 @@
 <div class="panel-group">
 <div class="panel panel-default">
 	<c:import url="main.jsp"/>
+	
+	<div class="form-group">
+      <label for="name">Nome do Produto:</label>
+      <input type="text" class="form-control" id="name" name="name">
+    </div>
+    
+    <div class="form-group">
+      <label for="value">Valor do Produto:</label>
+      <input type="text" class="form-control" id="value" name="value">
+    </div>
+    
+    <div class="form-group">
+      <label for="serialNumber">Número de Série do Produto:</label>
+      <input type="text" class="form-control" id="serialNumber" name="serialNumber">
+    </div>
+    
+    <div class="form-group">
+      <label for="brand">Marca do Produto:</label>
+      <input type="text" class="form-control" id="brand" name="brand">
+    </div>
 
    <div class="panel-body">
 	<form action="ComputerController" method="post">
@@ -34,11 +54,8 @@
       <label for="hasAccessories">Possui Acessórios? (Ex.: Mouse, teclado)</label>
       <input type="checkbox" class="form-control" id="hasAccessories" name="hasAccessories">
     </div>
-
-
-    
-        
-    <!-- COLOCAR RELACIONAMENTO DE HERANÇA (COMPUTADOR HERDA DE PRODUTO) -->
+	
+	
 
     <button type="submit" class="btn btn-default">Cadastrar</button>
   </form>

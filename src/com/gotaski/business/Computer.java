@@ -2,32 +2,46 @@ package com.gotaski.business;
 
 public class Computer extends Product {
 	
-	private int id;
 	private String operationalSystem;
 	private int cores;
 	private boolean hasAccessories; //it means if the loan will be with mouse, keyboard and speaker/
 	
-	public Computer(String operationalSystem, int cores, boolean hasAccessories) {
-		this.operationalSystem = operationalSystem;
-		this.cores = cores;
-		this.hasAccessories = hasAccessories;
+	public Computer(int id) {
+		super(id);
 	}
 	
-	public Computer(int id, String operationalSystem, int cores, boolean hasAccessories) {
-		this.id = id;
-		this.operationalSystem = operationalSystem;
-		this.cores = cores;
-		this.hasAccessories = hasAccessories;
+	public Computer(String name, float value, int serialNumber, String brand) {
+		super(name, value, serialNumber, brand);
 	}
 	
-	//ALSO CREATE THE OVERRIDE OF STRING METHOD
+	public Computer(String name, float value, int serialNumber, String brand, String operationalSystem, int cores, boolean hasAccessories) {
+		this(name, value, serialNumber, brand);
+		this.setOperationalSystem(operationalSystem);
+		this.setCores(cores);
+		this.setHasAccessories(hasAccessories);
+	}
+
+	public Computer(int id, String name, float value, int serialNumber, String brand, String operationalSystem, int cores, boolean hasAccessories) {
+		this(name, value, serialNumber, brand, operationalSystem, cores, hasAccessories);
+		this.setId(id);
+	}
 	
-	public int getId() {
-		return this.id;
+	public String toString() {
+		return String.format("%s - %s - %s - %s",
+					super.toString(),
+					this.operationalSystem,
+					this.cores,
+					this.hasAccessories
+				);
 	}
-	public void setId(int id) {
-		this.id = id;
+	
+	public void display() {
+		super.display();
+		
+		System.out.println("Computer");
+		System.out.println(this.toString());
 	}
+	
 	public String getOperationalSystem() {
 		return operationalSystem;
 	}

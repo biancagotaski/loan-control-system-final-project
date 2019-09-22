@@ -13,17 +13,20 @@ import connection.Conexao;
 public class ComputerDao {
 	public static List<Computer> getList(){
 		List<Computer> list = new ArrayList<Computer>();
-		String sql = "SELECT * FROM tcomputer ORDER BY idtcomputer";
+		String sql = "SELECT * FROM tcomputer C INNER JOIN tproduct P ON P.idtproduct = C.idproduct";
 		
 		try {
 			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			
-			//FALTA RELACIONAMENTO DE HERANÇA COM PRODUTO. DAR JOIN NO BANCO PRA PEGAR INFO DAS DUAS TABELAS
 			while(rs.next()){
 				list.add(
 							new Computer(
-										rs.getInt("idtcomputer"),
+										rs.getInt("idproduct"),
+										rs.getString("name"),
+										rs.getFloat("value"),
+										rs.getInt("serial_number"),
+										rs.getString("brand"),
 										rs.getString("operational_system"),
 										rs.getInt("cores"),
 										rs.getBoolean("has_accessories")
@@ -34,5 +37,35 @@ public class ComputerDao {
 			e.printStackTrace();
 		}
 		return list;
+	}
+	
+	public static Computer insert(Computer computer){
+		
+		try {
+			
+			ProductDao.insert(computer);
+			
+			PreparedStatement ps = 
+					Conexao.obterConexao().prepareStatement(
+							"INSERT INTO tcomputer"
+							+ "(idproduct, operational_system, cores, has_accessories) "
+							+ "VALUES "
+							+ "(?,?,?,?)"
+						);
+
+			ps.setInt(1, computer.getId());
+			ps.setString(2, computer.getOperationalSystem());
+			ps.setInt(3, computer.getCores());
+			ps.setBoolean(4, computer.isHasAccessories());
+			
+			
+			ps.execute();
+			
+			return computer;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+			
+		return null;
 	}
 }

@@ -24,7 +24,6 @@ public class AccessController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("invalid", false);
-		
 		request.getRequestDispatcher("login.jsp").forward(request, response);
 	}
 
@@ -32,9 +31,7 @@ public class AccessController extends HttpServlet {
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		
-		PrintWriter out = response.getWriter();
-		
+				
 		User user = UserDao.validation(email, password);
 		
 		if(user != null) {

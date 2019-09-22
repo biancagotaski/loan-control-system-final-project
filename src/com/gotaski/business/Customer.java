@@ -13,8 +13,7 @@ public class Customer {
 	private int number;
 	private String city;
 	private String state;
-	private Loan loan;
-	
+	private Loan loan;	
 	
 	public int getId() {
 		return this.id;
