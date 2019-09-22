@@ -3,6 +3,7 @@ package dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +51,8 @@ public class ComputerDao {
 							"INSERT INTO tcomputer"
 							+ "(idproduct, operational_system, cores, has_accessories) "
 							+ "VALUES "
-							+ "(?,?,?,?)"
+							+ "(?,?,?,?)",
+							Statement.RETURN_GENERATED_KEYS
 						);
 
 			ps.setInt(1, computer.getId());
@@ -61,7 +63,12 @@ public class ComputerDao {
 			
 			ps.execute();
 			
-			return computer;
+			ResultSet rs = ps.getGeneratedKeys();
+			
+			if(rs.next()) {
+				computer.setId(rs.getInt(1));
+				return computer;
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

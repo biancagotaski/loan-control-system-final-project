@@ -35,16 +35,16 @@
 		<%if(list != null){%>
 		<table class="table table-striped">
 	    	<thead>
-	      	<tr>
-	        <th>Id do produto</th>
-	        <th>Nome do Produto</th>
-	        <th>Preço</th>
-	        <th>Número serial</th>
-	        <th>Marca</th>
-	        <th>Sistema Operacional</th>
-	        <th>Quantidade de Núcleos</th>
-	        <th>Possui Acessórios?</th>
-	      	</tr>
+		      	<tr>
+			        <th>Id do produto</th>
+			        <th>Nome do Produto</th>
+			        <th>Preço</th>
+			        <th>Número serial</th>
+			        <th>Marca</th>
+			        <th>Sistema Operacional</th>
+			        <th>Quantidade de Núcleos</th>
+			        <th>Possui Acessórios?</th>
+		      	</tr>
 	    	</thead>
 	    	<tbody>
 	    	<%for(Computer item : list){%>

@@ -31,6 +31,7 @@ public class ComputerController extends HttpServlet {
 					Float.valueOf(request.getParameter("value")),
 					Integer.valueOf(request.getParameter("serialNumber")),
 					request.getParameter("brand"),
+				
 					request.getParameter("operationalSystem"),
 					Integer.valueOf(request.getParameter("cores")),
 					Boolean.valueOf(request.getParameter("hasAccessories"))
