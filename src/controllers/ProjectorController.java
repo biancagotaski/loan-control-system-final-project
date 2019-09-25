@@ -23,6 +23,8 @@ public class ProjectorController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("list", ProjectorDao.getList());
 		request.getRequestDispatcher("projectorList.jsp").forward(request, response);
+		
+		request.setAttribute("controller", "ProjectorController");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

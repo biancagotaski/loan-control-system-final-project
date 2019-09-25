@@ -16,6 +16,10 @@
 <div class="panel-group">
 <div class="panel panel-default">
 	<c:import url="nav.jsp"/>
+	
+	<form action="ProjectorController">
+		<button type="submit" class="btn btn-link">Voltar</button>
+	</form>
 
    <div class="panel-body">
 	<form action="ProjectorController" method="post">

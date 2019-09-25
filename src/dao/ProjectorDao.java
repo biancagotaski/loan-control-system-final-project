@@ -75,4 +75,12 @@ public class ProjectorDao {
 			
 		return null;		
 	}
+	
+//	public static boolean delete(int id) {
+//		try {
+//			PreparedStatement = ps Conexao.obterConexao().prepareStatement(
+//						"DELETE FROM tprinter R INNER JOIN tproduct P ON R.idtprinter = P.idtproduct WHERE"
+//					)
+//		}
+//	}
 }

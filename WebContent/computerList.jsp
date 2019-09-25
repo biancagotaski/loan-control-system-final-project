@@ -23,6 +23,10 @@
 <div class="panel panel-default">
 	<c:import url="nav.jsp"/>
    
+   <form action="main.jsp">
+		<button type="submit" class="btn btn-link">Voltar</button>
+	</form>
+   
    <div class="panel-body">
 	<form action="computerDetails.jsp">
 		<input type="hidden" name="screen" value="Computer">

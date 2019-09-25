@@ -26,6 +26,7 @@ public class Computer extends Product {
 		this.setId(id);
 	}
 	
+	@Override
 	public String toString() {
 		return String.format("%s - %s - %s - %s",
 					super.toString(),

@@ -15,13 +15,17 @@
 </head>
 <body>
 	<%
-	List<Projector> list = (List<Projector>)request.getAttribute("list");
+		List<Projector> list = (List<Projector>)request.getAttribute("list");
 	 %>
 	
 <div class="container">
 <div class="panel-group">
 <div class="panel panel-default">
 	<c:import url="nav.jsp"/>
+	
+	<form action="main.jsp">
+		<button type="submit" class="btn btn-link">Voltar</button>
+	</form>
    
    <div class="panel-body">
 	<form action="projectorDetails.jsp">

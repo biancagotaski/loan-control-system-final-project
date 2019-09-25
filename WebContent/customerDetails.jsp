@@ -17,6 +17,10 @@
 <div class="panel panel-default">
 	<c:import url="nav.jsp"/>
 
+	<form action="CustomerController">
+		<button type="submit" class="btn btn-link">Voltar</button>
+	</form>
+
    <div class="panel-body">
 	<form action="CustomerController" method="post">
 

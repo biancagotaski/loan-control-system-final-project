@@ -21,8 +21,13 @@ public class PrinterController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("list", PrinterDao.getList());
-		request.getRequestDispatcher("printerList.jsp").forward(request, response);
+		this.getPrinterList(request, response);
+		
+//		int id = Integer.valueOf(request.getParameter("idPrinter"));
+//		
+//		PrinterDao.delete(id);
+//		
+//		this.getPrinterList(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -45,5 +50,10 @@ public class PrinterController extends HttpServlet {
 		request.setAttribute("controller", "PrinterController");
 		
 		request.getRequestDispatcher("final.jsp").forward(request, response);
+	}
+	
+	private void getPrinterList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("list", PrinterDao.getList());
+		request.getRequestDispatcher("printerList.jsp").forward(request, response);
 	}
 }

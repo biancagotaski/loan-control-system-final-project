@@ -74,4 +74,23 @@ public class PrinterDao {
 			
 		return null;		
 	}
+	
+	public static boolean delete(int id){
+		try {
+			PreparedStatement ps = 
+					Conexao.obterConexao().prepareStatement(
+							"DELETE FROM tprinter WHERE id = ?"
+						);
+
+			ps.setInt(1, id);
+			
+			ps.execute();
+			
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+			
+		return false;
+	}
 }
