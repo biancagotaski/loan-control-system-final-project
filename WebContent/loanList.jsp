@@ -48,9 +48,10 @@
 	    	<form action="LoanController" method="post">
 	    		<input type="hidden" name="idLoan" value="<%=%>">
 		      	<tr>
-		      		<td><%=%></td>
-		        	<td><%=%></td>
-		        	<td></td>
+		      		<td><%=item.getId()%></td>
+		        	<td><%=item.getStartDate()%></td>
+		        	<td><%=item.getEndDate() %></td>
+		        	<td><%=item.getCPFCustomer() %></td>
 		        	<form action="LoanController" method="get">
 			        	<input type="hidden" name="idLoan" value="<%=%>">
 			        	<td><button type="submit" class="btn btn-default">Excluir</button></td>

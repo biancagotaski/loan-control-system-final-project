@@ -2,7 +2,7 @@ package com.gotaski.business;
 
 import java.util.Set;
 
-public abstract class Product {
+public class Product {
 	
 	private int id;
 	private String name;

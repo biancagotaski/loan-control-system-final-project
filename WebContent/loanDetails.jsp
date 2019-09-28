@@ -25,24 +25,29 @@
 	<form action="LoanController" method="post">
 
 	<div class="form-group">
-      <label for="name">Nome do Produto:</label>
-      <input type="text" class="form-control" id="name" name="name">
+      <label for="name">Data de início do Empréstimo</label>
+      <input type="text" class="form-control" id="startDate" name="startDate">
+    </div>
+    
+   	<div class="form-group">
+      <label for="name">Data final do Empréstimo</label>
+      <input type="text" class="form-control" id="endDate" name="endDate">
+    </div>
+
+	<div class="form-group">
+      <label for="name">Cliente</label>
+      <input type="text" class="form-control" id="customer" name="customer">
     </div>
     
     <div class="form-group">
-      <label for="value">Valor do Produto:</label>
-      <input type="text" class="form-control" id="value" name="value">
+      <label for="name">CPF do Cliente</label>
+      <input type="text" class="form-control" id="CPFCustomer" name="CPFCustomer">
     </div>
     
-    <div class="form-group">
-      <label for="serialNumber">Número de Série do Produto:</label>
-      <input type="text" class="form-control" id="serialNumber" name="serialNumber">
-    </div>
-    
-    <div class="form-group">
-      <label for="brand">Marca do Produto:</label>
-      <input type="text" class="form-control" id="brand" name="brand">
-    </div>
+    <!--  <div class="form-group">
+      <label for="name">Produto</label>
+      <input type="text" class="form-control" id="product" name="product">
+    </div> -->
 
 	<!-- COLOCAR RELACIONAMENTO DE OUTRAS ENTIDADES AQUI TAMBÉM PARA SER EXIBIDO -->
 	<!-- CLIENTE E PRODUTO -->

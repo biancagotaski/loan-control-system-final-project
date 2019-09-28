@@ -59,6 +59,11 @@ public class Customer {
 				);
 	}
 	
+	public void display() {
+		System.out.println("Cliente");
+		System.out.println(this.toString());
+	}
+	
 	
 	public int getId() {
 		return this.id;

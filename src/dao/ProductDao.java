@@ -4,6 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.gotaski.business.Product;
 
@@ -50,5 +52,61 @@ public class ProductDao {
 		}
 			
 		return null;		
+	}
+	
+	public static Product getById(int id) {
+		String sql = "SELECT * FROM tcustomer WHERE id = ?";
+		
+		try {
+			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				return new Product(
+							rs.getInt("idtproduct"),
+							rs.getString("name"),
+							rs.getFloat("value"),
+							rs.getInt("serial_number"),
+							rs.getString("brand")
+						);
+//				LoanDao.getById(rs.getInt("idloan"))
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	public static Set<Product> getListByProduct(int idLoan){
+		Set<Product> list = new HashSet<Product>();
+		
+		String sql = "SELECT * FROM tloanproduct WHERE idloan = ?";
+		
+		try {
+			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
+			ps.setInt(1, idLoan);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()){
+				list.add(
+							getById(rs.getInt("idproduct"))
+						);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public static Set<Product> getList(){
+		Set<Product> list = new HashSet<Product>();
+		
+		list.addAll(ComputerDao.getList());
+		list.addAll(PrinterDao.getList());
+		list.addAll(ProjectorDao.getList());
+		
+		return list;
 	}
 }

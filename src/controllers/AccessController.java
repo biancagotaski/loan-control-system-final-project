@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.gotaski.business.Administrator;
 import com.gotaski.business.User;
 
+import dao.LoanDao;
 import dao.UserDao;
 
 @WebServlet("/AccessController")
@@ -36,7 +37,7 @@ public class AccessController extends HttpServlet {
 		
 		if(user != null) {
 			request.getSession().setAttribute("user", user);
-			
+			request.setAttribute("loans", LoanDao.getList());			
 			request.getRequestDispatcher("main.jsp").forward(request, response);
 		} else {
 			

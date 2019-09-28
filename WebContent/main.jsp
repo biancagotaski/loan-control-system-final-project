@@ -47,6 +47,62 @@
 	    </div>
 	  </div>
 	</div>
+	
+	<div class="panel-body">
+		<div class="btn-group">
+			<form action="LoanController" method="get">
+				<button type="submit" class="btn btn-link" name="screen" value="loanDetails">Solicitar Empréstimo</button>
+			</form>
+		</div>
+		
+		<%if(list.size() > 0){ %>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Empréstimos</th>
+						<th>Total</th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>				
+				</thead>
+				<tbody>
+					<%for(Loan item : list){ %>
+						<tr>
+							<td><%=item.getProducts() == null ? 0 : item.getProducts().size()%></td>
+							<td>
+								<form action="CustomerLoanController" method="get">
+									<input type="hidden" name="id" value="<%=item.getId()%>">
+									<button type="submit" class="btn btn-link">Cliente</button>
+								</form>
+							</td>
+							<!--
+							<td>
+								<form action="ProductLoanController" method="get">
+									<input type="hidden" name="id" value="<%=item.getId()%>">
+									<button type="submit" class="btn btn-link">Produtos</button>
+								</form>
+							</td>
+							<td>
+								<form action="InformationLoanController" method="get">
+									<input type="hidden" name="id" value="<%=item.getId()%>">
+									<button type="submit" class="btn btn-link">Mais informações</button>
+								</form>
+							</td>
+							<td>
+								<form action="DeleteLoanController" method="post">
+									<input type="hidden" name="id" value="<%=item.getId()%>">
+									<button type="submit" class="btn btn-link">Excluir</button>
+								</form>
+							</td>
+							-->
+						</tr>
+					<%} %>
+				</tbody>
+			</table>
+		<%} %>
+	</div>
 </div>
 </div>
 </div>

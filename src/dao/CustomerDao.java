@@ -82,4 +82,33 @@ public class CustomerDao {
 			
 		return null;
 	}
+	
+	public static Customer getById(int id) {
+		String sql = "SELECT * FROM tcustomer WHERE id = ?";
+		
+		try {
+			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				return new Customer(
+							rs.getInt("idtcustomer"),
+							rs.getString("name"),
+							rs.getString("lastname"),
+							rs.getString("email"),
+							rs.getString("birthday"),
+							rs.getString("CPF"),
+							rs.getString("street"),
+							rs.getInt("number"),
+							rs.getString("city"),
+							rs.getString("state")
+						);
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 }

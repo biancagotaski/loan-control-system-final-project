@@ -13,10 +13,10 @@ public class Conexao {
 
 			String serverName = "localhost";
 			//dbloan
-			String bancoDados = "mydb";      				
+			String bancoDados = "loandb";      				
 			String url = "jdbc:mysql://" + serverName + "/" + bancoDados + "?useTimezone=true&serverTimezone=UTC";				
 			String usuario = "root";              				
-			String senha = "root";
+			String senha = "#Ads2017";
 
 			try {
 				DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
