@@ -53,6 +53,7 @@
 			<form action="LoanController" method="get">
 				<button type="submit" class="btn btn-link" name="screen" value="loanDetails">Solicitar Empréstimo</button>
 			</form>
+			<a href="JustTest">JustTest</a>
 		</div>
 		
 		<%if(list.size() > 0){ %>

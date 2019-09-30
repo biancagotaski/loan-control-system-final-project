@@ -3,27 +3,124 @@
   <display-name>LoanControlSystem</display-name>
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
-    <welcome-file>UserControllerServlet</welcome-file>
-    <welcome-file>userRegister.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet>
-    <description></description>
-    <display-name>UserControllerServlet</display-name>
-    <servlet-name>UserControllerServlet</servlet-name>
-    <servlet-class>controllers.UserControllerServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>UserControllerServlet</servlet-name>
-    <url-pattern>/UserControllerServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>AccessControllerServlet</display-name>
-    <servlet-name>AccessControllerServlet</servlet-name>
+  	<description></description>
+  	<display-name>AccessController</display-name>
+  	<servlet-name>AccessControllerServlet</servlet-name>
     <servlet-class>controllers.AccessControllerSerlvet</servlet-class>
+   </servlet>
+  <servlet-mapping>
+	 <servlet-name>AccessControllerServlet</servlet-name>
+	 <url-pattern>/AccessControllerServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>ProjectorController</display-name>
+    <servlet-name>ProjectorController</servlet-name>
+    <servlet-class>controllers.ProjectorControllerServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AccessControllerServlet</servlet-name>
-    <url-pattern>/AccessControllerServlet</url-pattern>
+    <servlet-name>ProjectorController</servlet-name>
+    <url-pattern>/ProjectorControllerServlet</url-pattern>
   </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>LoanController</display-name>
+    <servlet-name>LoanController</servlet-name>
+    <servlet-class>controllers.LoanControllerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoanController</servlet-name>
+    <url-pattern>/LoanControllerServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>CustomerController</display-name>
+    <servlet-name>CustomerController</servlet-name>
+    <servlet-class>controllers.CustomerControllerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerController</servlet-name>
+    <url-pattern>/CustomerControllerServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>CustomerLoanController</display-name>
+    <servlet-name>CustomerLoanController</servlet-name>
+    <servlet-class>controllers.CustomerLoanControllerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerLoanController</servlet-name>
+    <url-pattern>/CustomerLoanControllerServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>ProductLoanControllers</display-name>
+    <servlet-name>ProductLoanControllers</servlet-name>
+    <servlet-class>controllers.ProductLoanControllerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductLoanControllers</servlet-name>
+    <url-pattern>/ProductLoanControllerServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>DeleteLoanController</display-name>
+    <servlet-name>DeleteLoanController</servlet-name>
+    <servlet-class>controllers.DeleteLoanControllerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteLoanController</servlet-name>
+    <url-pattern>/DeleteLoanControllerServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>InformationLoanController</display-name>
+    <servlet-name>InformationLoanController</servlet-name>
+    <servlet-class>controllers.InformationLoanControllerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InformationLoanController</servlet-name>
+    <url-pattern>/InformationLoanControllerServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>PrinterController</display-name>
+    <servlet-name>PrinterController</servlet-name>
+    <servlet-class>controllers.PrinterControllerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PrinterController</servlet-name>
+    <url-pattern>/PrinterControllerServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ComputerController</display-name>
+    <servlet-name>ComputerController</servlet-name>
+    <servlet-class>controllers.ComputerControllerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ComputerController</servlet-name>
+    <url-pattern>/ComputerControllerServlet</url-pattern>
+  </servlet-mapping> 
+  
 </web-app>

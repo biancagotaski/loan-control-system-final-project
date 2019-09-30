@@ -17,7 +17,7 @@
 <div class="panel panel-default">
 	<c:import url="nav.jsp"/>
 	
-	<form action="LoanController">
+	<form action="LoanController" method="get">
 		<button type="submit" class="btn btn-link">Voltar</button>
 	</form>
 
@@ -34,10 +34,10 @@
       <input type="text" class="form-control" id="endDate" name="endDate">
     </div>
 
-	<div class="form-group">
+	<!--<div class="form-group">
       <label for="name">Cliente</label>
       <input type="text" class="form-control" id="customer" name="customer">
-    </div>
+    </div> -->
     
     <div class="form-group">
       <label for="name">CPF do Cliente</label>

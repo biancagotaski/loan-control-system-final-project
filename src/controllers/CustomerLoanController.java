@@ -29,7 +29,6 @@ public class CustomerLoanController extends HttpServlet {
 		request.setAttribute("loan", loan);
 		request.setAttribute("customers", CustomerDao.getList());
 
-		//CRIAR ESSE JSP
 		request.getRequestDispatcher("customerLoan.jsp").forward(request, response);
 	}
 
