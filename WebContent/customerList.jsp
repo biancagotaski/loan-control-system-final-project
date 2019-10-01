@@ -24,16 +24,27 @@
 <div class="panel panel-default">
 	<c:import url="nav.jsp"/>
    
-   <form action="main.jsp">
-		<button type="submit" class="btn btn-link">Voltar</button>
-	</form>
+   <div class="panel-body">
+    <div class="btn-group btn-group-justified">
+	    <div class="btn-group">
+			<form action="CustomerController" method="get">
+				<input type="hidden" name="screen" value="Customer">
+				<button type="submit" class="btn btn-default">Novo Cliente</button>
+			</form>
+	    </div>
+	    
+	    <div class="btn-group">
+	    </div>
+
+	    <div class="btn-group">
+	    </div>
+
+	    <div class="btn-group">
+			<c:import url="loanBack.jsp"/>
+	    </div>
+    </div>
    
    <div class="panel-body">
-	<form action="customerDetails.jsp">
-		<input type="hidden" name="screen" value="Customer">
-		<button type="submit" class="btn btn-default">Novo Cliente</button>
-		<hr>
-	</form>
 		<h4>Clientes</h4>
 		<br/>
 		<br/>	
@@ -72,8 +83,10 @@
 	      	<%}%>
 	    	</tbody>
 		</table>
-		<%}%>
-</div>
+		<%} else {%> 
+			<h4>Nenhum cliente encontrado. Cadastre um novo!</h4>
+		<%} %>
+    </div>
 </div>
 </div>
 </div>

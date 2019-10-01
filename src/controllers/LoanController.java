@@ -22,16 +22,16 @@ public class LoanController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		if(request.getParameter("screen") != null) {
-//			request.getRequestDispatcher("loanDetails.jsp").forward(request, response);
-//		} else {
-//			request.setAttribute("loans", LoanDao.getList());
-//			request.getRequestDispatcher("main.jsp").forward(request, response);
-//		}
+		if(request.getParameter("screen") != null) {
+			request.getRequestDispatcher("loanDetails.jsp").forward(request, response);
+		} else {
+			request.setAttribute("loans", LoanDao.getList());
+			request.getRequestDispatcher("main.jsp").forward(request, response);
+		}
 		
-		List<Loan> loans = LoanDao.getList();
-		request.setAttribute("loans", loans);
-		request.getRequestDispatcher("main.jsp").forward(request, response);
+//		List<Loan> loans = LoanDao.getList();
+//		request.setAttribute("loans", loans);
+//		request.getRequestDispatcher("main.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

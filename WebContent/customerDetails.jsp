@@ -17,9 +17,23 @@
 <div class="panel panel-default">
 	<c:import url="nav.jsp"/>
 
-	<form action="CustomerController">
-		<button type="submit" class="btn btn-link">Voltar</button>
-	</form>
+	<div class="panel-body">
+    <div class="btn-group btn-group-justified">
+	    <div class="btn-group">
+	    </div>
+	    
+	    <div class="btn-group">
+	    </div>
+
+	    <div class="btn-group">
+	    </div>
+
+	    <div class="btn-group">
+		    <form action="CustomerController" method="get">
+			    <button type="submit" class="btn btn-default">Voltar</button>
+			</form>
+	    </div>
+    </div> 
 
    <div class="panel-body">
 	<form action="CustomerController" method="post">
@@ -68,8 +82,6 @@
       <label for="state">Estado:</label>
       <input type="text" class="form-control" id="state" name="state">
     </div>
-    
-    <!-- COLOCAR RELACIONAMENTO DE UM PRA UM -->
 
     <button type="submit" class="btn btn-default">Cadastrar</button>
   </form>

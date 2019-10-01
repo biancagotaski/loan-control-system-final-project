@@ -23,9 +23,9 @@
 <div class="panel panel-default">
 	<c:import url="nav.jsp"/>
    
-   <form action="main.jsp">
-		<button type="submit" class="btn btn-link">Voltar</button>
-	</form>
+   <div class="btn-group">
+		<c:import url="loanBack.jsp"/>
+    </div>
    
    <div class="panel-body">
 	<form action="printerDetails.jsp">

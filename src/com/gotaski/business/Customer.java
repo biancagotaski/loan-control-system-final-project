@@ -16,7 +16,7 @@ public class Customer {
 	private Loan loan;	
 	
 	public Customer(int id) {
-		this.id = id;
+		this.setId(id);
 	}
 	
 	public Customer(String name, String lastName, String email, String birthday, String CPF, String street, int number, String city, String state) {
