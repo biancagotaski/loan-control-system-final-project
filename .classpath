@@ -9,9 +9,9 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/bianc/eclipse-workspace/ProjetoSessionJSTL/WebContent/WEB-INF/lib/javax.servlet.jsp.jstl-1.2.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/bianc/eclipse-workspace/ProjetoSessionJSTL/WebContent/WEB-INF/lib/javax.servlet.jsp.jstl-api-1.2.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/bianc/Downloads/apache-tomcat-8.5.43/apache-tomcat-8.5.43/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/bianc/Downloads/mysql-connector-java-8.0.17/mysql-connector-java-8.0.17/mysql-connector-java-8.0.17.jar"/>
+	<classpathentry kind="lib" path="/Users/biancagotaski/Downloads/apache-tomcat-8.5.43/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/biancagotaski/Downloads/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48.jar"/>
+	<classpathentry kind="lib" path="/Users/biancagotaski/Downloads/javax.servlet.jsp.jstl-api-1.2.1.jar"/>
+	<classpathentry kind="lib" path="/Users/biancagotaski/Downloads/javax.servlet.jsp.jstl.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

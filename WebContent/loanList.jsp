@@ -22,8 +22,6 @@
 <div class="panel-group">
 <div class="panel panel-default">
 	<c:import url="nav.jsp"/>
-	
-	<!-- NÃO COLOQUEI O FORM DE VOLTAR, PORQUE TEORICAMENTE ESSE DAQUI JÁ SERÁ O MAIN.JSP -->
    
    <div class="panel-body">
 	<form action="loanDetails.jsp">
